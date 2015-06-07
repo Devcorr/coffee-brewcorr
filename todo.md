@@ -1,1 +1,1 @@
-* Install bourbon bitters
+* Implement simple mvp in timer component
