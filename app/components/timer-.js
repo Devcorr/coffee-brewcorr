@@ -9,14 +9,16 @@ export default Ember.Component.extend({
     // use ember.run.later to schedule a timer update and save the timer in this.timer
     // have the callback call this function as its last statement
     var checkpoint = moment();
-    Ember.run.later(this, function () {
+    this.set('timer', Ember.run.later(this, function () {
       this.set('duration', this.get('duration') + moment().diff(checkpoint));
       this.start();
-    }, 500);
+    }, 500));
   },
 
   stop: function () {
     // use ember.run.cancel to stop the timer in the timer object
+    this.set('duration', 0);
+    Ember.run.cancel(this.get('timer'));
   },
 
   actions: {
@@ -25,7 +27,7 @@ export default Ember.Component.extend({
     },
 
     stopTimer: function () {
-
+      this.stop();
     }
   }
 });

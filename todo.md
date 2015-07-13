@@ -9,6 +9,8 @@ TODO
   * Format timer display nicely
   * Add pause button
   * Add check points (e.g. water cooldown time, bloom time, pour time)
+  
+* Update ember CLI
 
 Done
 =========
