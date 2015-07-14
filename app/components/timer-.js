@@ -8,6 +8,12 @@ export default Ember.Component.extend({
   duration: 0,
   timer: null,
 
+  displayTime: function () {
+    var millis = this.get('duration');
+    var duration = moment.duration(millis);
+    return "%@:%@".fmt(duration.minutes(), duration.seconds());
+  }.property('duration'),
+
   start: function () {
     // use ember.run.later to schedule a timer update and save the timer in this.timer
     // have the callback call this function as its last statement
