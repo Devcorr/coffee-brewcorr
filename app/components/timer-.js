@@ -2,6 +2,9 @@ import Ember from 'ember';
 import moment from 'npm:moment';
 
 export default Ember.Component.extend({
+
+  classNames: ['timer-container'],
+
   duration: 0,
   timer: null,
 

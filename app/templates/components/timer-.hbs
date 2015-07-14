@@ -1,9 +1,7 @@
-Hello, timer!
-
-{{duration}}
-
-<br />
-
-<button {{action "startTimer"}}>Start</button> <button {{action "stopTimer"}}>Stop</button>
+<div class="timer">
+  <div class="time">{{duration}}</div>
+  <button {{action "startTimer"}}>Start</button>
+  <button {{action "stopTimer"}}>Stop</button>
+</div>
 
 {{yield}}

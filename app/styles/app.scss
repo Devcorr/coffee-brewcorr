@@ -1,3 +1,24 @@
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../../bower_components/neat/app/assets/stylesheets/neat";
 @import "base/base";
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.timer-container {
+  @include outer-container;
+}
+
+.timer {
+  @include span-columns(6);
+  @include shift(3);
+
+  text-align: center;
+}
+
+.time {
+  font-size: 2rem;
+  padding-bottom: 1.5rem;
+}
