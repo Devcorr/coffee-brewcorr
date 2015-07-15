@@ -11,7 +11,7 @@ export default Ember.Component.extend({
   displayTime: function () {
     var millis = this.get('duration');
     var duration = moment.duration(millis);
-    return "%@:%@".fmt(duration.minutes(), duration.seconds());
+    return "%@:%@".fmt(this.zeroPad(duration.minutes(), 2), this.zeroPad(duration.seconds(), 2));
   }.property('duration'),
 
   start: function () {
@@ -32,6 +32,11 @@ export default Ember.Component.extend({
     // use ember.run.cancel to stop the timer in the timer object
     this.set('duration', 0);
     Ember.run.cancel(this.get('timer'));
+  },
+
+  zeroPad: function (number, width) {
+    number = number + '';
+    return number.length >= width ? number : new Array(width - number.length + 1).join(0) + number;
   },
 
   actions: {
