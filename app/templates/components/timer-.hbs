@@ -1,5 +1,8 @@
 <div class="timer">
   <div class="time">{{displayTime}}</div>
+
+  <input class="time-input" type="tel" placeholder="00:00" />
+
   <button {{action "startTimer"}}>Start</button>
   <button {{action "pauseTimer"}}>Pause</button>
   <button {{action "stopTimer"}}>Stop</button>
