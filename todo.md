@@ -9,6 +9,9 @@ TODO
   
 * figure out how to 0 pad the minute and seconds columns
 * Update ember CLI
+* Alert noise for checkpoints
+* Save checkpoint setup in local storage
+* Deploy to github pages
 
 Done
 =========

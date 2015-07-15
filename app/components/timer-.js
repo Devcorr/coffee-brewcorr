@@ -24,6 +24,10 @@ export default Ember.Component.extend({
     }, 500));
   },
 
+  pause: function () {
+    Ember.run.cancel(this.get('timer'));
+  },
+
   stop: function () {
     // use ember.run.cancel to stop the timer in the timer object
     this.set('duration', 0);
@@ -37,6 +41,10 @@ export default Ember.Component.extend({
 
     stopTimer: function () {
       this.stop();
+    },
+
+    pauseTimer: function () {
+      this.pause();
     }
   }
 });
