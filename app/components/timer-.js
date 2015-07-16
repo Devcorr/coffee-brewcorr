@@ -7,6 +7,7 @@ export default Ember.Component.extend({
 
   duration: 0,
   timer: null,
+  checkpoints: [],
 
   displayTime: function () {
     var millis = this.get('duration');
@@ -50,6 +51,15 @@ export default Ember.Component.extend({
 
     pauseTimer: function () {
       this.pause();
+    },
+
+    createCheckpoint: function (checkpointTime) {
+      var timeParts = checkpointTime.split(':');
+      var checkpointMillis = ((timeParts[0] * 60) + timeParts[1]) * 1000;
+      this.get('checkpoints').push({
+        display: checkpointTime,
+        millis: checkpointMillis
+      });
     }
   }
 });
