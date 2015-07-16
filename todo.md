@@ -1,7 +1,7 @@
 TODO
 =========
 
-
+Update UI when a checkpoint is added and start on the interaction of checkpoints and timer
 
 * Continue filling out timer component logic and UI
   * Add check points (e.g. water cooldown time, bloom time, pour time)
@@ -13,7 +13,8 @@ TODO
     * Checkpoints "scroll" behind the timer as it's ticking, getting greyed out an disappearing above it as they are 
       passed.
     * Need to be able to delete checkpoints.
-  
+    * Use an array proxy or something so ember can observe changes to checkpoints array?  
+
 * Update ember CLI
 * Alert noise for checkpoints
 * Save checkpoint setup in local storage
