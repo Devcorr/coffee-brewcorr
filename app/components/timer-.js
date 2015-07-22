@@ -56,10 +56,11 @@ export default Ember.Component.extend({
     createCheckpoint: function (checkpointTime) {
       var timeParts = checkpointTime.split(':');
       var checkpointMillis = ((timeParts[0] * 60) + timeParts[1]) * 1000;
-      this.get('checkpoints').push({
+      this.get('checkpoints').pushObject({
         display: checkpointTime,
         millis: checkpointMillis
       });
+      this.set('checkpoints', this.get('checkpoints').sortBy('millis'));
     }
   }
 });

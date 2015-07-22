@@ -1,7 +1,7 @@
 TODO
 =========
 
-Update UI when a checkpoint is added and start on the interaction of checkpoints and timer
+Start on the interaction of checkpoints and timer
 
 * Continue filling out timer component logic and UI
   * Add check points (e.g. water cooldown time, bloom time, pour time)
@@ -29,3 +29,4 @@ Done
 * Format timer display nicely
   * Add pause button
 * figure out how to 0 pad the minute and seconds columns
+* Update UI when a checkpoint is added

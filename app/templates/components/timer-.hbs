@@ -1,6 +1,10 @@
 <div class="timer">
   <div class="time">{{displayTime}}</div>
 
+  {{#each checkpoints as |checkpoint|}}
+    <div class="time">{{checkpoint.display}}</div>
+  {{/each}}
+
   {{input class="time-input" type="tel" placeholder="00:00" insert-newline="createCheckpoint"}}
 
   <button {{action "startTimer"}}>Start</button>
