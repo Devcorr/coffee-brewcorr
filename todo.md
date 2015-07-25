@@ -1,19 +1,17 @@
 TODO
 =========
 
-Start on the interaction of checkpoints and timer
+Reset checkpoints when the timer is stopped.
+Improve time input.
 
 * Continue filling out timer component logic and UI
   * Add check points (e.g. water cooldown time, bloom time, pour time)
-    * Start by building the input and interactions in the component first, only worry about getting a transient set
-      of checkpoints working stored in memory on the component.
     * Style the input to look similar to the timer
     * Inputting numbers should work like most timer apps I've used, just hit the numbers, punctuation is handled
       for you.
     * Checkpoints "scroll" behind the timer as it's ticking, getting greyed out an disappearing above it as they are 
       passed.
     * Need to be able to delete checkpoints.
-    * Use an array proxy or something so ember can observe changes to checkpoints array?  
 
 * Update ember CLI
 * Alert noise for checkpoints
@@ -30,3 +28,6 @@ Done
   * Add pause button
 * figure out how to 0 pad the minute and seconds columns
 * Update UI when a checkpoint is added
+* Start by building the input and interactions in the component first, only worry about getting a transient set
+  of checkpoints working stored in memory on the component.
+* Use an array proxy or something so ember can observe changes to checkpoints array?  
