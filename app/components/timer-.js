@@ -7,7 +7,18 @@ export default Ember.Component.extend({
 
   duration: 0,
   timer: null,
-  checkpoints: [],
+
+  checkpoints: Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+    sortProperties: ['millis'],
+    sortAscending: true,
+    content: []
+  }),
+
+  pastCheckpoints: Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+    sortProperties: ['millis'],
+    sortAscending: true,
+    content: []
+  }),
 
   displayTime: function () {
     var millis = this.get('duration');
@@ -20,7 +31,14 @@ export default Ember.Component.extend({
     // have the callback call this function as its last statement
     var checkpoint = moment();
     this.set('timer', Ember.run.later(this, function () {
+      var nextCheckpoint = this.get('checkpoints.firstObject');
       this.set('duration', this.get('duration') + moment().diff(checkpoint));
+
+      if (nextCheckpoint && this.get('duration') >= nextCheckpoint.millis) {
+        this.get('checkpoints').removeAt(0);
+        this.get('pastCheckpoints').pushObject(nextCheckpoint);
+      }
+
       this.start();
     }, 500));
   },
@@ -56,11 +74,11 @@ export default Ember.Component.extend({
     createCheckpoint: function (checkpointTime) {
       var timeParts = checkpointTime.split(':');
       var checkpointMillis = ((timeParts[0] * 60) + timeParts[1]) * 1000;
+
       this.get('checkpoints').pushObject({
         display: checkpointTime,
         millis: checkpointMillis
       });
-      this.set('checkpoints', this.get('checkpoints').sortBy('millis'));
     }
   }
 });

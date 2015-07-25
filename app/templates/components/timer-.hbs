@@ -1,4 +1,8 @@
 <div class="timer">
+  {{#each pastCheckpoints as |checkpoint|}}
+      <div class="time past-checkpoint">{{checkpoint.display}}</div>
+  {{/each}}
+
   <div class="time">{{displayTime}}</div>
 
   {{#each checkpoints as |checkpoint|}}
